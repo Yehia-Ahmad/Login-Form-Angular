@@ -3,21 +3,11 @@
   <h3>Login</h3>
   <label class="form_control">
     username
-    <input
-      type="text"
-      name="username"
-      [ngModel]="userName"
-      (ngModelChange)="userName = $event"
-    />
+    <input type="text" name="username" [(ngModel)]="userName" />
   </label>
   <label class="form_control">
     Passward
-    <input
-      type="password"
-      name="password"
-      [ngModel]="password"
-      (ngModelChange)="password = $event"
-    />
+    <input type="password" name="password" [(ngModel)]="password" />
   </label>
   <button (click)="onSubmitHandler()">submit</button>
 </div>
