@@ -1,7 +1,28 @@
-<style>
-  .alert_Massage {
-    color: #f00;
-  }
-</style>
+<div [class]="loginForm">
+  <p [class]="alertStyle">* Email or Passward isn't valid</p>
+  <h3>Login</h3>
+  <label class="form_control">
+    username
+    <input
+      type="text"
+      name="username"
+      [ngModel]="userName"
+      (ngModelChange)="userName = $event"
+    />
+  </label>
+  <label class="form_control">
+    Passward
+    <input
+      type="password"
+      name="password"
+      [ngModel]="password"
+      (ngModelChange)="password = $event"
+    />
+  </label>
+  <button (click)="onSubmitHandler()">submit</button>
+</div>
 
-<p>Hello world</p>
+<div [class]="welcomePage">
+  <h1>Welcome Back!</h1>
+  <button (click)="logoutHandler()">Logout</button>
+</div>
