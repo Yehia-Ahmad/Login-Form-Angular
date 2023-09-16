@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+body {
+  position: relative;
+  background: #1b293f;
+}
+
+button {
+  margin-top: 2rem;
+  height: 1.5rem;
+  width: 5rem;
+  border-radius: 5px;
+  background-color: #40005d;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

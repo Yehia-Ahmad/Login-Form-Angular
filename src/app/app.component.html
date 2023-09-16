@@ -1,18 +1,1 @@
-<div [class]="loginForm">
-  <p [class]="alertStyle">* Email or Passward isn't valid</p>
-  <h3>Login</h3>
-  <label class="form_control">
-    username
-    <input type="text" name="username" [(ngModel)]="userName" />
-  </label>
-  <label class="form_control">
-    Passward
-    <input type="password" name="password" [(ngModel)]="password" />
-  </label>
-  <button (click)="onSubmitHandler()">submit</button>
-</div>
-
-<div [class]="welcomePage">
-  <h1>Welcome Back!</h1>
-  <button (click)="logoutHandler()">Logout</button>
-</div>
+<router-outlet></router-outlet>
