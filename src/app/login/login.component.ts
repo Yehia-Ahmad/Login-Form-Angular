@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,10 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  formData = {
-    username: '',
-    password: '',
-  };
+  formData = new FormGroup({
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  });
 
   showError = false;
 
@@ -19,8 +20,14 @@ export class LoginComponent {
 
   onSubmitHandler() {
     this.showError = false;
+    console.log(this.formData);
+    if (this.formData.invalid) {
+      this.formData.markAllAsTouched();
+      return;
+    }
+
     this.authService
-      .login(this.formData.username, this.formData.password)
+      .login(this.formData.value.username!, this.formData.value.password!)
       .then((value) => {
         this.router.navigate(['/']);
       })

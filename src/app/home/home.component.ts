@@ -7,7 +7,15 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  constructor(private authService: AuthService) {}
+  userName: string = '';
+  constructor(private authService: AuthService) {
+    this.getNameHandler();
+  }
+
+  getNameHandler() {
+    this.userName = this.authService.getName();
+    return this.userName;
+  }
 
   logoutHandler() {
     this.authService.logout();
